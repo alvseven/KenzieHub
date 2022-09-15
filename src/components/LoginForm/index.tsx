@@ -29,27 +29,30 @@ function LoginForm() {
 
   return (
     <FormContainer onSubmit={handleSubmit(loginSubmit)}>
-      <h3>Login</h3>
-
+      <h3>Faça login</h3>
       <label htmlFor="email">Email</label>
-      <div>
+      <div className="email-container">
         <input
           type="email"
           id="email"
-          placeholder="tsunode@email.com"
+          placeholder="alvseven@email.com"
           {...register("email")}
         />
       </div>
       <Error>{errors.email?.message} </Error>
       <label htmlFor="password">Senha</label>
-      <div>
+      <div className="password-container">
         <input
           type={passwordVisibility}
           id="password"
           placeholder="**********"
           {...register("password")}
         />
-        <button type="button" onClick={togglePasswordVisibility}>
+        <button
+          id="password-visibility"
+          type="button"
+          onClick={togglePasswordVisibility}
+        >
           {passwordIcon}
         </button>
       </div>
@@ -57,7 +60,9 @@ function LoginForm() {
       <Link to="/register">
         Ainda não possui uma conta? Clique aqui para se cadastrar
       </Link>
-      <button type="submit">Entrar</button>
+      <button id="login-button" type="submit">
+        Entrar
+      </button>
     </FormContainer>
   );
 }

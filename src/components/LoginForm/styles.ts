@@ -4,85 +4,97 @@ import "animate.css";
 const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
+  width: 65%;
+  max-width: 450px;
   gap: 1rem;
-  width: 90%;
-  margin-top: 1.25rem;
-  padding: 2rem 0.5rem;
+  padding: 2rem;
   background-color: #212529;
-  border-radius: 3.2px;
-  box-shadow: 0px 3.2px 32px -8px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
 
   h3 {
-    font-family: "Inter", sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 700;
+    font-family: "Inter", sans-serif;
     color: #f8f9fa;
     text-align: center;
-
-    @media (min-width: 524px) {
-      font-size: 1.2rem;
-    }
   }
 
-  div {
+  .email-container {
+    display: flex;
+    align-items: center;
+    background-color: #343b41;
+    border-radius: 4px;
+  }
+
+  .password-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-family: "Inter";
-    font-size: 13px;
-    font-weight: 400;
-    color: #f8f9fa;
     background-color: #343b41;
-    border: 1px solid #f8f9fa;
-    border-radius: 3px;
+    border-radius: 4px;
   }
 
   label {
-    font-family: "Inter";
-    font-size: 0.6rem;
+    font-size: 1rem;
     font-weight: 400;
+    font-family: "Inter";
     color: #f8f9fa;
-
-    @media (min-width: 524px) {
-      font-size: 1.1rem;
-    }
   }
 
-  input {
-    width: 87%;
-    height: 2rem;
+  #email {
+    width: 100%;
+    height: 2.5rem;
     padding: 0 0.9rem;
-    font-family: "Inter";
     font-size: 0.9rem;
     font-weight: 400;
+    font-family: "Inter";
     color: #f8f9fa;
     background-color: #343b41;
-    border: 0 solid transparent;
+    border-radius: 4px;
+    border-width: 0;
     outline: none;
   }
 
-  span {
+  #password {
+    width: 85%;
+    height: 2.5rem;
+    padding: 0 0.9rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    font-family: "Inter";
+    color: #f8f9fa;
+    background-color: #343b41;
+    border-width: 0;
+    border-radius: 4px;
+    outline: none;
+  }
+
+  #password-visibility {
     margin-right: 0.5rem;
-    cursor: pointer;
+    background-color: #343b41;
+    border: none;
+
+    svg {
+      font-size: 20px;
+      color: #ffffff;
+    }
   }
 
   a {
     font-family: "Inter";
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: #868e96;
     text-decoration: none;
     text-align: center;
-
-    @media (min-width: 524px) {
-      font-size: 0.8rem;
-    }
+    letter-spacing: 0.6px;
   }
 
-  button {
+  #login-button {
+    width: 100%;
     height: 2rem;
     font-family: "Inter";
-    font-size: 13px;
+    font-size: 1.2rem;
     font-weight: 500;
     color: #ffffff;
     background-color: #ff577f;
@@ -94,21 +106,12 @@ const FormContainer = styled.form`
       color: #ff577f;
       background-color: #f8f9fa;
     }
-
-    @media (min-width: 524px) {
-      height: 2.2rem;
-      font-size: 1.2rem;
-    }
-  }
-
-  @media (min-width: 524px) {
-    max-width: 28rem;
   }
 `;
 
 const Error = styled.span`
   font-family: "Nunito", sans-serif;
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   color: #ff6961;
 `;
 
