@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import "animate.css";
 
-export const Container = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,3 +16,5 @@ export const Container = styled.div`
     margin-top: 5rem;
   }
 `;
+
+export { Container };

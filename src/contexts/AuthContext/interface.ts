@@ -10,6 +10,6 @@ export interface AuthProps {
 export interface AuthProviderData {
   user: User | null;
   isLoading: boolean;
-  loginSubmit: (data: UserLoginProps) => void;
-  registerSubmit: (data: UserRegisterProps) => void;
+  loginSubmit: (userData: UserLoginProps) => void;
+  registerSubmit: (userData: UserRegisterProps) => void;
 }
