@@ -2,13 +2,13 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+
 import { AuthContext } from "../../contexts/AuthContext";
+import { loginFormSchema } from "../../schemas";
+import { UserLoginProps } from "../../services/userLogin";
 
 import { FormContainer, Error } from "./styles";
-import { AiFillEye } from "react-icons/ai";
-import { AiFillEyeInvisible } from "react-icons/ai";
-import { UserLoginProps } from "../../services/userLogin";
-import { loginFormSchema } from "../../schemas";
 
 function LoginForm() {
   const { loginSubmit } = useContext(AuthContext);
@@ -67,4 +67,4 @@ function LoginForm() {
   );
 }
 
-export { LoginForm };
+export default LoginForm;

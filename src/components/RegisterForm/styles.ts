@@ -11,6 +11,7 @@ const FormContainer = styled.form`
   background-color: #212529;
   border-radius: 4px;
   animation: bounceInDown 1.5s;
+  margin-bottom: 2rem;
 
   h3 {
     font-size: 1.1rem;
@@ -20,21 +21,6 @@ const FormContainer = styled.form`
     text-align: center;
   }
 
-  .email-container {
-    display: flex;
-    align-items: center;
-    background-color: #343b41;
-    border-radius: 4px;
-  }
-
-  .password-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #343b41;
-    border-radius: 4px;
-  }
-
   label {
     font-size: 1rem;
     font-weight: 400;
@@ -42,8 +28,7 @@ const FormContainer = styled.form`
     color: #f8f9fa;
   }
 
-  #email {
-    width: 100%;
+  input {
     height: 2.5rem;
     padding: 0 0.9rem;
     font-size: 0.9rem;
@@ -54,31 +39,6 @@ const FormContainer = styled.form`
     border-radius: 4px;
     border-width: 0;
     outline: none;
-  }
-
-  #password {
-    width: 85%;
-    height: 2.5rem;
-    padding: 0 0.9rem;
-    font-size: 0.9rem;
-    font-weight: 400;
-    font-family: "Inter";
-    color: #f8f9fa;
-    background-color: #343b41;
-    border-width: 0;
-    border-radius: 4px;
-    outline: none;
-  }
-
-  #password-visibility {
-    margin-right: 0.5rem;
-    background-color: #343b41;
-    border: none;
-
-    svg {
-      font-size: 20px;
-      color: #ffffff;
-    }
   }
 
   a {
@@ -91,22 +51,36 @@ const FormContainer = styled.form`
     letter-spacing: 0.6px;
   }
 
-  #login-button {
-    width: 100%;
-    height: 2.2rem;
-    font-size: 1.2rem;
+  button {
+    height: 2rem;
+    font-size: 1rem;
     font-weight: 500;
     font-family: "Inter";
     color: #ffffff;
-    background-color: #ff577f;
-    border: 1.3px solid #ff577f;
+    background-color: #59323f;
+    border: 1.3px solid #59323f;
     border-radius: 4px;
 
     :hover {
       transition: 500ms;
-      color: #ff577f;
+      color: #59323f;
       background-color: #f8f9fa;
     }
+
+    @media (min-width: 524px) {
+      height: 2.2rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  select {
+    height: 2.2rem;
+    padding-left: 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 400;
+    font-family: "Inter";
+    color: #868e96;
+    background-color: #343b41;
   }
 `;
 
