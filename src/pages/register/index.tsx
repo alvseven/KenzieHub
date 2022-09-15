@@ -1,13 +1,13 @@
-import LoginForm from "../../components/LoginForm";
+import RegisterForm from "../../components/RegisterForm";
 import { Container } from "./styles";
 
-function Home() {
+function Register() {
   return (
     <Container>
       <img src="./src/assets/logo.svg" alt="logo kenzie hub" />
-      <LoginForm />
+      <RegisterForm />
     </Container>
   );
 }
 
-export default Home;
+export default Register;
