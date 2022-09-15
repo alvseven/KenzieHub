@@ -13,9 +13,11 @@ import { FormContainer, Error } from "./styles";
 function LoginForm() {
   const { loginSubmit } = useContext(AuthContext);
   const [passwordShown, setPasswordShown] = useState(false);
+
   const togglePasswordVisibility = () => {
     setPasswordShown(!passwordShown);
   };
+
   const {
     register,
     handleSubmit,

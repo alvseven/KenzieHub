@@ -1,6 +1,7 @@
 import { api } from "./api";
 
 export interface UserRegisterProps {
+  id: string;
   email: string;
   password: string;
   confirmPassword?: string;
