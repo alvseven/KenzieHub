@@ -11,7 +11,6 @@ const FormContainer = styled.form`
   background-color: #212529;
   border-radius: 4px;
   animation: bounceInDown 1.5s;
-  margin-bottom: 2rem;
 
   h3 {
     font-size: 1.1rem;

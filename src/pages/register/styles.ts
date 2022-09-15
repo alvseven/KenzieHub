@@ -7,13 +7,14 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  width: 100vw;
+  width: 100%;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
   animation: fadeIn 3s;
 
   img {
     width: 125px;
     height: 20px;
-    margin-top: 5rem;
   }
 `;
 
