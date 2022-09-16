@@ -8,7 +8,6 @@ const ModalInner = styled.div`
   top: 0;
   left: 0;
   background-color: rgba(180, 166, 166, 0.2);
-  animation: fadeIn 2s;
 `;
 
 const ModalContainer = styled.div`
@@ -21,6 +20,7 @@ const ModalContainer = styled.div`
   position: fixed;
   top: 25%;
   left: calc(50% - 140px);
+  animation: zoomIn 1.5s;
 
   @media (min-width: 524px) {
     width: 450px;

@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 
 import { UserContext } from "../../contexts/UserContext";
 import { addTechFormSchema } from "../../schemas";
-import { CreateTechProps } from "../../services/createTech";
+import { CreateTechProps } from "../../services/createUserTech";
 
 import {
   ModalInner,
