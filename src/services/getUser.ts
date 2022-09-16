@@ -1,6 +1,6 @@
 import { api } from "./api";
 
-export interface UserTechs {
+export interface UserTech {
   id: string;
   title: string;
   status: string;
@@ -20,9 +20,9 @@ export interface User {
   email: string;
   id: string;
   name: string;
-  techs: UserTechs[];
+  techs: UserTech[];
   updated_at: string;
-  works: UserTechs[];
+  works: UserTech[];
 }
 
 export async function getUser(userId: string | null): Promise<User> {

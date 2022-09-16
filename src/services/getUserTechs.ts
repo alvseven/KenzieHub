@@ -1,7 +1,7 @@
 import { api } from "./api";
-import { UserTechs } from "./getUser";
+import { UserTech } from "./getUser";
 
-export async function getUserTechs(userId: string | null): Promise<UserTechs> {
-  const { data } = await api.get<UserTechs>(`/users/${userId}`);
+export async function getUserTechs(userId: string | null): Promise<UserTech> {
+  const { data } = await api.get<UserTech>(`/users/${userId}`);
   return data;
 }

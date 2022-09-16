@@ -1,7 +1,7 @@
 import { api } from "./api";
-import { UserTechs } from "./getUser";
+import { UserTech } from "./getUser";
 
-export async function deleteUserTech(techId: string): Promise<UserTechs> {
+export async function deleteUserTech(techId: string): Promise<UserTech> {
   const token = localStorage.getItem("@kenzie-hub:token");
 
   const { data } = await api.delete(`/users/techs/${techId}`, {

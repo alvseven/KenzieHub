@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import UserProvider from "../contexts/UserContext";
 
 import Dashboard from "../pages/dashboard";
 import Home from "../pages/home";
@@ -9,7 +10,14 @@ function RoutesMain() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/dashboard" element={<Dashboard />} />
+      <Route
+        path="/dashboard"
+        element={
+          <UserProvider>
+            <Dashboard />
+          </UserProvider>
+        }
+      />
     </Routes>
   );
 }

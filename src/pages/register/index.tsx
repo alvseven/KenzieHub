@@ -1,4 +1,5 @@
 import RegisterForm from "../../components/RegisterForm";
+
 import { Container } from "./styles";
 
 function Register() {

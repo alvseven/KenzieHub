@@ -1,6 +1,17 @@
 import styled from "styled-components";
 import "animate.css";
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-height: 100vh;
+  padding: 0 0.8rem;
+  background-color: #121214;
+  animation: fadeIn 2s;
+`;
+
 const UserInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -9,7 +20,7 @@ const UserInfoContainer = styled.div`
   padding: 1rem 0.8rem;
   border-bottom: 1px solid #212529;
   background-color: #121214;
-  animation: fadeIn 2s;
+  animation: zoomIn 2s;
 
   h3 {
     font-size: 1.25rem;
@@ -17,17 +28,11 @@ const UserInfoContainer = styled.div`
     font-family: "Inter";
     background: linear-gradient(
       250deg,
-      #df2935,
       #3772ff,
       #54e8c9,
       #0a014f,
       #466995,
-      #f58f29,
-      #96031a,
-      #ead637,
-      #462255,
-      #93e1d8,
-      #031926
+      #93e1d8
     );
     background-size: 600% 600%;
     background-clip: border-box;
@@ -81,4 +86,4 @@ const UserInfoContainer = styled.div`
   }
 `;
 
-export { UserInfoContainer };
+export { Container, UserInfoContainer };

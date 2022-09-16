@@ -14,6 +14,9 @@ function LoginForm() {
   const { loginSubmit } = useContext(AuthContext);
   const [passwordShown, setPasswordShown] = useState(false);
 
+  const passwordVisibility = passwordShown ? "text" : "password";
+  const passwordIcon = passwordShown ? <AiFillEye /> : <AiFillEyeInvisible />;
+
   const togglePasswordVisibility = () => {
     setPasswordShown(!passwordShown);
   };
@@ -25,9 +28,6 @@ function LoginForm() {
   } = useForm<UserLoginProps>({
     resolver: yupResolver(loginFormSchema),
   });
-
-  const passwordVisibility = passwordShown ? "text" : "password";
-  const passwordIcon = passwordShown ? <AiFillEye /> : <AiFillEyeInvisible />;
 
   return (
     <FormContainer onSubmit={handleSubmit(loginSubmit)}>
