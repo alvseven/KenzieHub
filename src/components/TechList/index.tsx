@@ -1,8 +1,8 @@
 import { useContext } from "react";
 
 import { UserContext } from "../../contexts/UserContext";
-import { UserTech } from "../../services/getUser";
 import TechCard from "../TechCard";
+import { UserTech } from "../../services/getUser";
 
 import { EmptyTechContainer, List } from "./styles";
 

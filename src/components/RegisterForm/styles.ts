@@ -89,4 +89,4 @@ const Error = styled.span`
   color: #ff6961;
 `;
 
-export { Error, FormContainer };
+export { FormContainer, Error };

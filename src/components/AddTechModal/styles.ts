@@ -54,7 +54,7 @@ const CloseContainer = styled.div`
   }
 `;
 
-const RegisterTechForm = styled.form`
+const AddTechForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
@@ -120,4 +120,4 @@ const Error = styled.span`
   color: #ff6961;
 `;
 
-export { ModalInner, ModalContainer, CloseContainer, RegisterTechForm, Error };
+export { ModalInner, ModalContainer, CloseContainer, AddTechForm, Error };

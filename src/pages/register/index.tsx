@@ -1,11 +1,12 @@
 import RegisterForm from "../../components/RegisterForm";
 
+import logo from "../../assets/logo.svg";
 import { Container } from "./styles";
 
 function Register() {
   return (
     <Container>
-      <img src="./src/assets/logo.svg" alt="logo kenzie hub" />
+      <img src={logo} alt="logo kenzie hub" />
       <RegisterForm />
     </Container>
   );

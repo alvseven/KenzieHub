@@ -5,9 +5,9 @@ import Header from "../../components/Header";
 import AddTechContainer from "../../components/AddTechContainer";
 import AddTechModal from "../../components/AddTechModal";
 import TechList from "../../components/TechList";
+import EditTechModal from "../../components/EditTechModal";
 
 import { Container, UserInfoContainer } from "./styles";
-import EditTechModal from "../../components/EditTechModal";
 
 function Dashboard() {
   const { userName, userModule, modalAddTechIsOpen, modalTechDetailsIsOpen } =

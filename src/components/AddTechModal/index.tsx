@@ -10,7 +10,7 @@ import {
   ModalInner,
   ModalContainer,
   CloseContainer,
-  RegisterTechForm,
+  AddTechForm,
   Error,
 } from "./styles";
 
@@ -33,7 +33,7 @@ function AddTechModal() {
           <button onClick={toggleModalAddVisibility}>X</button>
         </CloseContainer>
 
-        <RegisterTechForm onSubmit={handleSubmit(createTech)}>
+        <AddTechForm onSubmit={handleSubmit(createTech)}>
           <label htmlFor="title">Nome</label>
           <input
             type="title"
@@ -50,7 +50,7 @@ function AddTechModal() {
           </select>
 
           <button type="submit">Adicionar tecnologia</button>
-        </RegisterTechForm>
+        </AddTechForm>
       </ModalContainer>
     </ModalInner>
   );
