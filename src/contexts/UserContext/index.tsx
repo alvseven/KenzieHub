@@ -1,10 +1,19 @@
-import { createContext, useEffect, useState } from "react";
+import {
+  createContext,
+  FormEvent,
+  FormEventHandler,
+  useEffect,
+  useState,
+} from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-import { CreateTechProps, createUserTech } from "../../services/createTech";
+import { CreateTechProps, createUserTech } from "../../services/createUserTech";
 import { getUser, UserTech } from "../../services/getUser";
 import { UserProps, UserProviderData } from "./interface";
+import { editUserTech } from "../../services/editUserTech";
+import { eventNames } from "process";
+import { deleteUserTech } from "../../services/deleteUserTech";
 
 export const UserContext = createContext<UserProviderData>(
   {} as UserProviderData
@@ -32,8 +41,8 @@ const UserProvider = ({ children }: UserProps) => {
             position: toast.POSITION.BOTTOM_CENTER,
             autoClose: 4000,
           });
-        } catch (error) {
-          console.error(error);
+        } catch (err) {
+          console.error(err);
         }
       }
     }
@@ -46,8 +55,8 @@ const UserProvider = ({ children }: UserProps) => {
         const userId = localStorage.getItem("@kenzie-hub:userId");
         const { techs } = await getUser(userId);
         setTechs(techs);
-      } catch (error) {
-        console.error(error);
+      } catch (err) {
+        console.error(err);
       }
     }
     getUserTechs();
@@ -98,9 +107,41 @@ const UserProvider = ({ children }: UserProps) => {
     }
   };
 
-  const editTechStatus = () => {
+  const editTechStatus = async (
+    event: FormEvent,
+    id: string,
+    status: string
+  ) => {
+    event.preventDefault();
     try {
-    } catch {}
+      await editUserTech(id, status);
+      toggleModalDetailsVisibility();
+      toast.success("Tecnologia editada com sucesso!", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 2000,
+      });
+    } catch (err) {
+      toast.error("Oops, algo deu errado!", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 2000,
+      });
+    }
+  };
+
+  const deleteTech = async (techId: string) => {
+    try {
+      await deleteUserTech(techId);
+      toggleModalDetailsVisibility();
+      toast.success("Tecnologia excluída com sucesso!", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 2000,
+      });
+    } catch (err) {
+      toast.error("Oops, algo deu errado!", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 2000,
+      });
+    }
   };
 
   return (
@@ -118,6 +159,7 @@ const UserProvider = ({ children }: UserProps) => {
         toggleModalDetailsVisibility,
         createTech,
         editTechStatus,
+        deleteTech,
       }}
     >
       {children}

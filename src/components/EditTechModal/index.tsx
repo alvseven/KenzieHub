@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import { UserContext } from "../../contexts/UserContext";
 
@@ -10,8 +10,10 @@ import {
 } from "./styles";
 
 function EditTechModal() {
-  const { toggleModalDetailsVisibility, editTechStatus, tech } =
+  const { tech, toggleModalDetailsVisibility, editTechStatus, deleteTech } =
     useContext(UserContext);
+
+  const [techStatus, setTechStatus] = useState(tech.status);
 
   return (
     <ModalInner>
@@ -21,18 +23,23 @@ function EditTechModal() {
           <button onClick={toggleModalDetailsVisibility}>X</button>
         </CloseContainer>
 
-        <EditTechForm onSubmit={editTechStatus}>
+        <EditTechForm onSubmit={(e) => editTechStatus(e, tech.id, techStatus)}>
           <label htmlFor="title">Nome</label>
           <input id="title" disabled value={tech.title} />
           <label htmlFor="status">Selecionar status</label>
-          <select defaultValue={tech.status}>
+          <select
+            defaultValue={tech.status}
+            onChange={(e) => setTechStatus(e.target.value)}
+          >
             <option value="Iniciante">Iniciante</option>
             <option value="Intermediário">Intermediário</option>
             <option value="Avançado">Avançado</option>
           </select>
 
-          <button>Editar tecnologia</button>
-          <button>Excluir tecnologia</button>
+          <button type="submit">Editar tecnologia</button>
+          <button type="button" onClick={() => deleteTech(tech.id)}>
+            Excluir tecnologia
+          </button>
         </EditTechForm>
       </ModalContainer>
     </ModalInner>

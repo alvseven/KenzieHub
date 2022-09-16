@@ -1,5 +1,6 @@
-import { ReactNode } from "react";
-import { CreateTechProps } from "../../services/createTech";
+import { FormEvent, ReactNode } from "react";
+
+import { CreateTechProps } from "../../services/createUserTech";
 import { UserTech } from "../../services/getUser";
 
 export interface UserProps {
@@ -18,5 +19,6 @@ export interface UserProviderData {
   toggleModalAddVisibility: () => void;
   toggleModalDetailsVisibility: () => void;
   createTech: (userData: CreateTechProps) => void;
-  editTechStatus: () => void;
+  editTechStatus: (event: FormEvent, id: string, status: string) => void;
+  deleteTech: (techId: string) => void;
 }
