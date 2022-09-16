@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import { toast } from "react-toastify";
 
 import { AuthProps, AuthProviderData } from "./interface";
@@ -14,12 +15,11 @@ export const AuthContext = createContext<AuthProviderData>(
 
 const AuthProvider = ({ children }: AuthProps) => {
   const [user, setUser] = useState<User | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    async function getUser() {
+    async function autoLogin() {
       const token = localStorage.getItem("@kenzie-hub:token");
       if (token) {
         try {
@@ -34,10 +34,8 @@ const AuthProvider = ({ children }: AuthProps) => {
         }
         navigate("/dashboard", { replace: true });
       }
-
-      setIsLoading(false);
     }
-    getUser();
+    autoLogin();
   }, []);
 
   const loginSubmit = async (userData: UserLoginProps) => {
@@ -75,11 +73,23 @@ const AuthProvider = ({ children }: AuthProps) => {
         });
         navigate("/", { replace: true });
       }
-    } catch (error) {
-      toast.error("Não foi possível criar a sua conta, email já cadastrado!", {
-        position: toast.POSITION.TOP_RIGHT,
-        autoClose: 2000,
-      });
+    } catch (err: unknown) {
+      if (axios.isAxiosError(err)) {
+        if (err.response?.status === 401) {
+          toast.error(
+            "Não foi possível criar a sua conta, email já cadastrado!",
+            {
+              position: toast.POSITION.TOP_RIGHT,
+              autoClose: 2000,
+            }
+          );
+        } else {
+          toast.error("Oops, algo deu errado!", {
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose: 2000,
+          });
+        }
+      }
     }
   };
 
@@ -87,7 +97,6 @@ const AuthProvider = ({ children }: AuthProps) => {
     <AuthContext.Provider
       value={{
         user,
-        isLoading,
         loginSubmit,
         registerSubmit,
       }}

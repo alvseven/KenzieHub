@@ -6,8 +6,13 @@ import { UserContext } from "../../contexts/UserContext";
 import { addTechFormSchema } from "../../schemas";
 import { CreateTechProps } from "../../services/createTech";
 
-import { RegisterTechForm, Error, ModalInner } from "./styles";
-import { ModalContainer, CloseContainer } from "./styles";
+import {
+  ModalInner,
+  ModalContainer,
+  CloseContainer,
+  RegisterTechForm,
+  Error,
+} from "./styles";
 
 function AddTechModal() {
   const { createTech, toggleModalAddVisibility } = useContext(UserContext);

@@ -1,10 +1,10 @@
 import { api } from "./api";
-import { UserTechs } from "./getUser";
+import { UserTech } from "./getUser";
 
 export async function editUserTech(
   techInfo: string,
   techId: string
-): Promise<UserTechs> {
+): Promise<UserTech> {
   const token = localStorage.getItem("@kenzie-hub:token");
 
   const { data } = await api.put(

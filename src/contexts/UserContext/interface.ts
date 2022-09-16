@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { CreateTechProps } from "../../services/createTech";
+import { UserTech } from "../../services/getUser";
 
 export interface UserProps {
   children: ReactNode;
@@ -8,8 +9,14 @@ export interface UserProps {
 export interface UserProviderData {
   userName: string;
   userModule: string;
-  modalAddIsOpen: boolean;
+  tech: UserTech;
+  techs: UserTech[];
+  modalAddTechIsOpen: boolean;
+  modalTechDetailsIsOpen: boolean;
   clearLocalStorage: () => void;
-  createTech: (userData: CreateTechProps) => void;
+  setTechToEdit: (tech: UserTech) => void;
   toggleModalAddVisibility: () => void;
+  toggleModalDetailsVisibility: () => void;
+  createTech: (userData: CreateTechProps) => void;
+  editTechStatus: () => void;
 }

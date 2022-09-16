@@ -1,5 +1,5 @@
 import { api } from "./api";
-import { UserTechs } from "./getUser";
+import { UserTech } from "./getUser";
 
 export interface CreateTechProps {
   title: string;
@@ -8,7 +8,7 @@ export interface CreateTechProps {
 
 export async function createUserTech(
   techInfo: CreateTechProps
-): Promise<UserTechs> {
+): Promise<UserTech> {
   const token = localStorage.getItem("@kenzie-hub:token");
   const { title, status } = techInfo;
   const { data } = await api.post(

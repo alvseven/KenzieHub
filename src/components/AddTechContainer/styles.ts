@@ -5,6 +5,7 @@ const AddContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
   margin-top: 1rem;
 
   h4 {
@@ -18,12 +19,12 @@ const AddContainer = styled.div`
   }
 
   @media (min-width: 688px) {
-    width: 65%;
     justify-content: space-around;
+    width: 90%;
 
     h4 {
       font-size: 1.5rem;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
     }
   }
 `;
@@ -33,7 +34,7 @@ const AddButton = styled.button`
   font-size: 1.5rem;
   color: #2ceaa3;
   background-color: #212325;
-  border: 1px solid transparent;
+  border: 1px double #2ceaa9;
   border-radius: 4px;
 
   :hover {
@@ -41,7 +42,6 @@ const AddButton = styled.button`
     color: #212325;
     background-color: #2ceaa3;
     border: 1px solid transparent;
-    animation: flash 1s;
   }
 `;
 
