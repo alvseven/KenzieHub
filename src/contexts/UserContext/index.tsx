@@ -1,10 +1,4 @@
-import {
-  createContext,
-  FormEvent,
-  FormEventHandler,
-  useEffect,
-  useState,
-} from "react";
+import { createContext, FormEvent, useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 
@@ -12,7 +6,6 @@ import { CreateTechProps, createUserTech } from "../../services/createUserTech";
 import { getUser, UserTech } from "../../services/getUser";
 import { UserProps, UserProviderData } from "./interface";
 import { editUserTech } from "../../services/editUserTech";
-import { eventNames } from "process";
 import { deleteUserTech } from "../../services/deleteUserTech";
 
 export const UserContext = createContext<UserProviderData>(
